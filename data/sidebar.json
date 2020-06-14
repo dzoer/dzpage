@@ -1,0 +1,12 @@
+{
+    "blog": {
+        "name": "我的博客",
+        "url": "https://blog.ecyworld.cn",
+        "icon": "account_circle"
+    },
+    "rand_pic": {
+        "name": "随机动漫图片",
+        "url": "https://lw.ecyworld.cn",
+        "icon": "transform"
+    }
+}

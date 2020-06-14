@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DzPage</title>
+    <!-- DIY CSS STYLE -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- MDUI -->
+    <link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/mdui/0.4.3/css/mdui.min.css">
+    <script src="https://cdnjs.loli.net/ajax/libs/mdui/0.4.3/js/mdui.min.js"></script>
+</head>
+
+<body class="mdui-color-grey-100 mdui-theme-primary-blue-grey mdui-theme-accent-brown mdui-appbar-with-toolbar mdui-drawer-body-left">
+    <!-- LOAD BAR -->
+    <div id="loadbar">
+        <div class="mdui-progress" :style="display">
+            <div class="mdui-progress-indeterminate"></div>
+        </div>
+    </div>
+    <!-- TOP BAR START -->
+    <header class="mdui-appbar mdui-appbar-fixed">
+        <div class="mdui-toolbar mdui-color-theme">
+            <a href="javascript:;" id="siderbarBtn" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">menu</i></a>
+            <a href="javascript:;" class="mdui-typo-headline">DzPage</a>
+            <div class="mdui-toolbar-spacer"></div>
+            <a href="javascript:;" class="refresh mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">refresh</i></a>
+            <a href="javascript:;" mdui-menu="{target: '#topMenu'}" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">more_vert</i></a>
+            <!-- TOP MENU START -->
+            <ul class="mdui-menu" id="topMenu">
+                <li class="mdui-menu-item">
+                    <a href="javascript:;" class="mdui-ripple refresh">刷新页面</a>
+                </li>
+                <li class="mdui-menu-item">
+                    <a href="javascript:;" class="mdui-ripple" onclick='goto("https://ecyworld.cn",3000,true)'>旧版本</a>
+                </li>
+                <li class="mdui-divider"></li>
+                <li class="mdui-menu-item">
+                    <a href="javascript:;" onclick="tip('About','unBuild')" class="mdui-ripple">关于</a>
+                </li>
+            </ul>
+            <!-- TOP MENU END -->
+        </div>
+    </header>
+    <!-- TOP BAR END -->
+    <!-- SIDE BAR START -->
+    <div class="mdui-drawer mdui-shadow-5 " style="background:white" id="siderbar">
+        <ul class="mdui-list" id="siderbarList">
+            <li class="mdui-list-item mdui-ripple">
+                <i class="mdui-list-item-icon mdui-icon material-icons">home</i>
+                <div class="mdui-list-item-content">首页</div>
+            </li>
+            <div v-for="(item,i) in list" v-cloak>
+                <li class="mdui-list-item mdui-ripple">
+                    <i class="mdui-list-item-icon mdui-icon material-icons">{{item.icon}}</i>
+                    <div @click="goto(item.url)" class="mdui-list-item-content">{{item.name}}</div>
+                </li>
+            </div>
+        </ul>
+    </div>
+    <!-- SIDE BAR END -->
+    <div id="mainArea">
+        <index />
+    </div>
+    <!-- 临时区域 -->
+    <div id="freeArea">
+
+    </div>
+    <!-- VUE JS -->
+    <script src="https://lib.baomitu.com/vue/2.6.11/vue.js"></script>
+    <!-- AXIOS -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <!-- MAIN JS -->
+    <script src="js/component.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
