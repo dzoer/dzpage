@@ -1,12 +1,12 @@
 {
     "blog": {
         "name": "我的博客",
-        "url": "https://blog.ecyworld.cn",
+        "url": "#站点已关闭",
         "icon": "account_circle"
     },
     "rand_pic": {
-        "name": "随机动漫图片",
-        "url": "https://lw.ecyworld.cn",
+        "name": "联系我",
+        "url": "#QQ：2475539124",
         "icon": "transform"
     }
 }
